@@ -1,0 +1,12 @@
+《Openssl编程》
+ssl的主要数据结构定义在ssl.h中。
+主要的数据结构有SSL_CTX、SSL和SSL_SESSION。
+
+SSL_CTX数据结构主要用于SSL握手前的环境准备，设置CA文件和目录、设置SSL握手中的证书文件和私钥、设置协议版本以及其他一些SSL握手时的选项。
+SSL数据结构主要用于SSL握手以及传送应用数据。
+SSL_SESSION中保存了主密钥、session id、读写加解密钥、读写MAC密钥等信息。
+
+SSL_CTX中缓存了所有SSL_SESSION信息，SSL中包含SSL_CTX。
+一般SSL_CTX的初始化在程序最开始调用，然后再生成SSL数据结构。
+由于SSL_CTX中缓存了所有的SESSION，新生成的SSL结构又包含SSL_CTX数据，所以通过SSL数据结构能查找以前用过的SESSION id，实现SESSION重用。
+

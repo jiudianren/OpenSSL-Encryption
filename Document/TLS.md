@@ -1,6 +1,8 @@
 [SSL/TLS协议运行机制的概述](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
 
-	pre-master key
+
+过程中 有三个随机数： 最后一个随机数，就是 `pre-master key`
+
 	
 	
 	
