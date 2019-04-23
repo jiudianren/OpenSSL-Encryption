@@ -1,3 +1,30 @@
+
+ShS产生的方法就是Diffie–Hellman ,
+参考openssl 是如何实现的 
+
+openssl DH wiki
+	
+	https://wiki.openssl.org/index.php/Diffie_Hellman
+
+EVP Key Agreement 这里详细说明了如何 生成这个ShS
+
+	https://wiki.openssl.org/index.php/EVP_Key_Agreement
+
+euicc 中使用 如下的ECDH 算法，示例参考如下:
+	
+	https://wiki.openssl.org/index.php/Elliptic_Curve_Diffie_Hellman
+
+openssl之DH(Diffie–Hellman)加密
+https://www.cnblogs.com/osbreak/p/10362148.html
+
+
+openssl 编程之DH
+https://www.jianshu.com/p/4e953ee674f9
+
+
+
+
+
 openssl简介
 https://blog.csdn.net/junkie0901/article/details/44960547
 
@@ -5,13 +32,15 @@ https://blog.csdn.net/w1781806162/article/details/46358747/
 
 
 
+	Diffie–Hellman 
+
 公有链上数据如何保护？ 
 
 http://www.sohu.com/a/294173132_262257
 
 
 
-	（4）       client使用到目前为止所有产生了的随机数据（shared secret），client产生本次握手中的premaster secret（这个步骤是有可能有server的参与的，由他们使用的加密算法决定），并且把这个用server的公共密钥加密，送回给server.如果server要求需要验证client，那么client也需要自己把自己的证书送过去，同时送一些自己签过名的数据过去。
+	（4）    client使用到目前为止所有产生了的随机数据（shared secret），client产生本次握手中的premaster secret（这个步骤是有可能有server的参与的，由他们使用的加密算法决定），并且把这个用server的公共密钥加密，送回给server.如果server要求需要验证client，那么client也需要自己把自己的证书送过去，同时送一些自己签过名的数据过去。
 	SSL协议有两种技术来产生shared secret：
 	一种是RSA，一种是EDH。
 	RSA就是我们上一章说过的一种不对称加密算法。首先server把自己的RSA公共密钥送给client，client于是用这个key加密一个随机产生的值（这个随机产生的值就是shared secret），再把结果送给server。
@@ -20,3 +49,6 @@ http://www.sohu.com/a/294173132_262257
 	
 	
 	
+How to combine a private key and a public key for a shared secret in Java
+
+https://stackoverflow.com/questions/9001843/how-to-combine-a-private-key-and-a-public-key-for-a-shared-secret-in-java
