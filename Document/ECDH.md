@@ -16,16 +16,24 @@ ECDH:
 	1)Alice生成随机整数a，计算A=a*G,
           Bob生成随机整数b，计算B=b*G。
 	
-	2)Alice将A传递给Bob。A的传递可以公开，即攻击者可以获取A。
+	2)Alice将A传递给Bob。
+          A的传递可以公开，即攻击者可以获取A。
 		由于椭圆曲线的离散对数问题是难题，
-		所以攻击者不可以通过A、G计算出a。Bob将B传递给Alice。
+		所以攻击者不可以通过A、G计算出a。
+               Bob将B传递给Alice。
 		同理，B的传递可以公开。
 	
 	3 )Bob收到Alice传递的A，计算Q=b*A
 	
 	4)Alice收到Bob传递的B，计算Q‘=a*B
 	
-	Alice、Bob双方即得Q=b*A=b*(a*G)=(b*a)*G=(a*b)*G=a*(b*G)=a*B=Q'(交换律和结合律)，即双方得到一致的密钥Q。
+	Alice、Bob双方即得
+        Q=b*A=b*(a*G)
+             =(b*a)*G
+             =(a*b)*G
+             =a*(b*G)
+             =a*B=Q'(交换律和结合律)，
+        即双方得到一致的密钥Q。
 
 
 
